@@ -9,7 +9,7 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f3f4f6; /* A slightly off-white background to match the image's context */
+            background-color: #f3f4f6;
         }
         #chat-container {
             display: flex;
@@ -17,7 +17,7 @@
             height: 100vh;
             max-height: 100vh;
             overflow: hidden;
-            border-radius: 1.5rem; /* More rounded corners for the main container */
+            border-radius: 1.5rem;
         }
         #chat-messages {
             flex-grow: 1;
@@ -25,41 +25,21 @@
             scrollbar-width: thin;
             scrollbar-color: #a5b4fc #e5e7eb;
         }
-        #chat-messages::-webkit-scrollbar {
-            width: 6px;
-        }
-        #chat-messages::-webkit-scrollbar-track {
-            background: #e5e7eb;
-        }
-        #chat-messages::-webkit-scrollbar-thumb {
-            background-color: #a5b4fc;
-            border-radius: 10px;
-        }
-        
-        /* Typing indicator animation */
+        #chat-messages::-webkit-scrollbar { width: 6px; }
+        #chat-messages::-webkit-scrollbar-track { background: #e5e7eb; }
+        #chat-messages::-webkit-scrollbar-thumb { background-color: #a5b4fc; border-radius: 10px; }
         .typing-indicator span {
             height: 8px;
             width: 8px;
-            background-color: #6b7280; /* Gray dot color */
+            background-color: #6b7280;
             border-radius: 50%;
             display: inline-block;
             margin: 0 2px;
             animation: bounce 1.4s infinite ease-in-out both;
         }
-        .typing-indicator span:nth-child(1) {
-            animation-delay: -0.32s;
-        }
-        .typing-indicator span:nth-child(2) {
-            animation-delay: -0.16s;
-        }
-        @keyframes bounce {
-            0%, 80%, 100% {
-                transform: scale(0);
-            }
-            40% {
-                transform: scale(1.0);
-            }
-        }
+        .typing-indicator span:nth-child(1) { animation-delay: -0.32s; }
+        .typing-indicator span:nth-child(2) { animation-delay: -0.16s; }
+        @keyframes bounce { 0%, 80%, 100% { transform: scale(0); } 40% { transform: scale(1.0); } }
     </style>
 </head>
 <body class="p-4 md:p-8">
@@ -69,9 +49,7 @@
         <header class="bg-indigo-600 text-white p-4 flex items-center space-x-3 rounded-t-2xl">
             <div class="relative flex-shrink-0">
                  <div class="w-12 h-12 rounded-full bg-indigo-400 flex items-center justify-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-white" viewBox="0 0 20 20" fill="currentColor">
-                      <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
-                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-white" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" /></svg>
                  </div>
                  <span class="absolute bottom-0 right-0 block h-3 w-3 rounded-full bg-green-400 border-2 border-indigo-600"></span>
             </div>
@@ -83,15 +61,12 @@
 
         <!-- Messages -->
         <div id="chat-messages" class="p-6 space-y-6">
-            <!-- Initial bot message -->
             <div class="flex items-end gap-2">
                 <div class="w-8 h-8 rounded-full bg-indigo-100 flex items-center justify-center flex-shrink-0">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-indigo-600" viewBox="0 0 20 20" fill="currentColor">
-                      <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
-                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-indigo-600" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" /></svg>
                 </div>
                 <div class="bg-gray-100 text-gray-800 p-3 rounded-2xl rounded-bl-none max-w-xs">
-                    Hello! I'm here to help you with the college rules. How can I assist you today? Try asking about "dress code", "attendance", or "library rules".
+                    Hello! I'm your AI assistant. Ask me anything about the college rulebook.
                 </div>
             </div>
         </div>
@@ -101,9 +76,7 @@
             <form id="chat-form" class="flex items-center space-x-3">
                 <input type="text" id="user-input" placeholder="Reply to Assistant..." class="flex-1 p-3 bg-transparent border-0 focus:outline-none focus:ring-0">
                 <button type="submit" class="bg-indigo-600 text-white rounded-full p-3 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition duration-300 flex-shrink-0">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
-                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" /></svg>
                 </button>
             </form>
         </footer>
@@ -114,73 +87,63 @@
         const userInput = document.getElementById('user-input');
         const chatMessages = document.getElementById('chat-messages');
 
-        // --- CORE CHATBOT LOGIC (UNCHANGED) ---
-        const collegeRules = {
-            "dress_code": { keywords: ["dress", "attire", "uniform", "clothes", "wear"], response: "All students are required to adhere to the college dress code. For boys, this is formal trousers and a shirt. For girls, salwar kameez or saree is required. T-shirts, jeans, and casual wear are not permitted on campus during working hours." },
-            "attendance": { keywords: ["attendance", "present", "minimum", "percentage", "absent", "leave"], response: "A minimum of 75% attendance is mandatory in all subjects to be eligible for the final examinations. Students falling short of this requirement may be barred from appearing in the exams." },
-            "mobile_phone": { keywords: ["mobile", "phone", "cellphone", "device"], response: "The use of mobile phones is strictly prohibited in classrooms, labs, library, and the examination hall. Phones must be switched off or in silent mode. Violators may have their devices confiscated." },
-            "library": { keywords: ["library", "books", "due date", "borrow", "fine"], response: "Students can borrow up to 3 books at a time for a period of 15 days. A fine of Rs. 5 per day will be levied for overdue books. Silence and decorum must be maintained in the library at all times." },
-            "ragging": { keywords: ["ragging", "hazing", "anti-ragging", "bullying"], response: "Ragging in any form is a serious offense and is strictly banned. Any student found guilty of ragging will be subject to severe disciplinary action, which may include expulsion from the college and legal proceedings as per the law." },
-            "exams": { keywords: ["exam", "examination", "test", "cheating", "malpractice"], response: "Students must carry their ID card and hall ticket for all examinations. Any form of malpractice, including cheating or communicating with others, will result in immediate debarment from the examination and further disciplinary action." },
-            "greetings": { keywords: ["hello", "hi", "hey", "greetings"], response: "Hello! How can I help you with the college rules today?" },
-            "default": { keywords: [], response: "I'm sorry, I don't have information on that topic. Please try asking in a different way or contact the college administration for specific queries. You can ask me about dress code, attendance, library, exams, or ragging." }
-        };
-        
-        function getBotResponse(input) {
-            const lowercasedInput = input.toLowerCase().trim();
-            if (lowercasedInput === "") return "Please ask a question.";
-            for (const rule in collegeRules) {
-                if (rule !== 'default') {
-                    for (const keyword of collegeRules[rule].keywords) {
-                        if (lowercasedInput.includes(keyword)) {
-                            return collegeRules[rule].response;
-                        }
-                    }
-                }
-            }
-            return collegeRules.default.response;
-        }
+        // --- UI Handling Logic (UPDATED FOR N8N) ---
 
-        // --- UI Handling Logic (UPDATED) ---
-
-        chatForm.addEventListener('submit', function(e) {
+        chatForm.addEventListener('submit', async function(e) {
             e.preventDefault();
             const messageText = userInput.value.trim();
             if (messageText === '') return;
+
             addMessage(messageText, 'user');
             userInput.value = '';
             showTypingIndicator();
-            setTimeout(() => {
+
+            // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+            // >> PASTE YOUR N8N PRODUCTION WEBHOOK URL IN THE LINE BELOW <<
+            // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+            const n8nWebhookUrl = 'YOUR_N8N_WEBHOOK_PRODUCTION_URL_HERE'; 
+            
+            try {
+                const response = await fetch(n8nWebhookUrl, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    // The body sends the user's message to n8n
+                    body: JSON.stringify({ message: messageText })
+                });
+
+                if (!response.ok) {
+                    throw new Error(`Network response was not ok: ${response.statusText}`);
+                }
+
+                const data = await response.json();
+                // We expect n8n to return a JSON object like { "reply": "The bot's answer..." }
+                const botResponse = data.reply; 
+
                 removeTypingIndicator();
-                const botResponse = getBotResponse(messageText);
                 addMessage(botResponse, 'bot');
-            }, 1500);
+
+            } catch (error) {
+                console.error('Error calling n8n:', error);
+                removeTypingIndicator();
+                addMessage("Sorry, I'm having trouble connecting to the server. Please try again later.", 'bot');
+            }
         });
 
         function addMessage(content, sender) {
             const messageWrapper = document.createElement('div');
-            
             if (sender === 'user') {
                 messageWrapper.classList.add('flex', 'justify-end');
-                messageWrapper.innerHTML = `
-                    <div class="bg-indigo-600 text-white p-3 rounded-2xl rounded-br-none max-w-sm">
-                        ${content}
-                    </div>
-                `;
+                messageWrapper.innerHTML = `<div class="bg-indigo-600 text-white p-3 rounded-2xl rounded-br-none max-w-sm">${content}</div>`;
             } else {
                 messageWrapper.classList.add('flex', 'items-end', 'gap-2');
                 messageWrapper.innerHTML = `
                     <div class="w-8 h-8 rounded-full bg-indigo-100 flex items-center justify-center flex-shrink-0">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-indigo-600" viewBox="0 0 20 20" fill="currentColor">
-                          <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
-                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-indigo-600" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" /></svg>
                     </div>
-                    <div class="bg-gray-100 text-gray-800 p-3 rounded-2xl rounded-bl-none max-w-xs">
-                        ${content}
-                    </div>
-                `;
+                    <div class="bg-gray-100 text-gray-800 p-3 rounded-2xl rounded-bl-none max-w-xs">${content}</div>`;
             }
-            
             chatMessages.appendChild(messageWrapper);
             chatMessages.scrollTop = chatMessages.scrollHeight;
         }
@@ -191,27 +154,18 @@
             indicatorWrapper.classList.add('flex', 'items-end', 'gap-2');
             indicatorWrapper.innerHTML = `
                 <div class="w-8 h-8 rounded-full bg-indigo-100 flex items-center justify-center flex-shrink-0">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-indigo-600" viewBox="0 0 20 20" fill="currentColor">
-                      <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
-                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-indigo-600" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" /></svg>
                 </div>
                 <div class="bg-gray-100 text-gray-800 p-3 rounded-2xl rounded-bl-none">
-                    <div class="typing-indicator">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
-                </div>
-            `;
+                    <div class="typing-indicator"><span></span><span></span><span></span></div>
+                </div>`;
             chatMessages.appendChild(indicatorWrapper);
             chatMessages.scrollTop = chatMessages.scrollHeight;
         }
 
         function removeTypingIndicator() {
             const indicator = document.getElementById('typing-indicator');
-            if (indicator) {
-                indicator.remove();
-            }
+            if (indicator) { indicator.remove(); }
         }
     </script>
 </body>
